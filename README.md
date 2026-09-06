@@ -53,13 +53,7 @@ Este proyecto demuestra cómo la selección del algoritmo debe responder al prob
 
 # 🎯 Objetivo
 
-Clasificar cada día como:
-
-🔴 Alta demanda (>1200 viajes)
-
-🔵 Baja demanda (≤1200 viajes)
-
-para anticipar decisiones operativas relacionadas con la distribución de scooters y la planificación comercial.
+Clasificar cada día como 🔴 Alta demanda (con más de 1200 viajes) o 🔵 Baja demanda (con igual o menos de 1200 viajes) para anticipar decisiones relacionadas con la distribución de scooters y la planificación comercial.
 
 ---
 
@@ -79,16 +73,14 @@ para anticipar decisiones operativas relacionadas con la distribución de scoote
 Variables predictoras:
 
 - Temperatura
-- Precipitación
+- Precipitaciones
 - Inversión en marketing
 - Precio por minuto
 - Fin de semana
 - Feriado
 - Eventos urbanos
 
-Variable objetivo:
-
-**high_demand**
+Variable objetivo: **high_demand**
 
 ---
 
@@ -97,45 +89,34 @@ Variable objetivo:
 - Análisis exploratorio (EDA)
 - Limpieza y preparación de datos
 - Ingeniería de variables
-- División Train/Test
+- División en Train/Test
 - Escalado (StandardScaler)
-- Entrenamiento
+- Entrenamiento del modelo
 - Evaluación
 - Interpretación del modelo
 
 ---
 
-# 🤖 Modelo implementado
-
-**Logistic Regression**
+# 🤖 Modelo implementado: **Logistic Regression**
 
 La Regresión Logística fue seleccionada por su capacidad para modelar probabilidades en problemas de clasificación binaria y por permitir una interpretación directa mediante Odds Ratio.
 
 ---
 
-# 📈 Métricas evaluadas
+# 📈 Las métricas evaluadas son:
 
-- Accuracy
-- Precision
-- Recall
-- ROC-AUC
-- Log-Loss
-- Matriz de confusión
+1. Accuracy
+2. Precision
+3. Recall
+4. ROC-AUC
+5. Log-Loss
+6. Matriz de confusión
 
 ---
 
-# 💡 Resultados
+# 💡 Resultados obtenidos
 
-El modelo obtuvo una adecuada capacidad discriminatoria para diferenciar días de alta y baja demanda.
-
-Además de la predicción, permitió interpretar el efecto de variables como:
-
-- inversión en marketing
-- lluvia
-- eventos urbanos
-- fines de semana
-
-sobre la probabilidad de registrar jornadas de alta demanda.
+El modelo obtuvo una adecuada capacidad discriminatoria para diferenciar días de alta y baja demanda. Además de la predicción, permitió interpretar el efecto de variables como inversión en marketing, lluvia, eventos urbanos y fin de semana sobre la probabilidad de registrar jornadas de *alta demanda*.
 
 ---
 
@@ -165,32 +146,27 @@ Los Odds Ratios permiten interpretar el efecto de cada variable sobre la probabi
 
 ---
 
-# 💼 Impacto para el negocio
+# 💼 Impacto del modelo elegido sobre el negocio
 
-El modelo permite:
-
-- anticipar picos de demanda
-- optimizar la asignación de scooters
-- planificar campañas de marketing
-- ajustar estrategias de precios
-- mejorar la planificación operativa
+El modelo de regresión logística permite *anticipar picos de demanda*, *optimizar la clasificación de scooters*, *planificar estratégicamente las campañas de marketing*, *ajustar precios* y *mejorar la planificación operativa*.
 
 ---
 
-# 📌 Competencias demostradas
+# 📌 Competencias demostradas en el desarrollo de este proyecto
 
-- Machine Learning
-- Clasificación binaria
-- Logistic Regression
-- Odds Ratio
-- Feature Engineering
-- Model Evaluation
-- Business Analytics
-- Storytelling con datos
+Implementacion de:
+- Machine Learning,
+- Clasificación binaria,
+- Regresión logística,
+- Interpretación de Odds Ratio,
+- Ingeniería de características,
+- Evaluación de modelos,
+- Anañlítica de negocios,
+- Storytelling con datos.
 
 ---
 
-# 🔄 Flujo del proyecto
+# 🔄 Flujo de trabajo en el proyecto
 
 ```mermaid
 flowchart LR
@@ -216,21 +192,19 @@ H --> I[Business Insights]
 
 # ⭐ Aprendizajes
 
-Más allá del desempeño predictivo, el principal aporte del proyecto fue demostrar que la selección del modelo debe responder al objetivo de negocio.
+Más allá del desempeño predictivo, el principal aporte del proyecto fue demostrar que **la selección del modelo debe responder al objetivo de negocio**.
 
-El trabajo evidencia competencias en pensamiento estadístico, modelado probabilístico e interpretación de resultados para apoyar la toma de decisiones.
+El trabajo evidencia la implementación de la estadística en el análisis de los datos y la aplicación de criterio para la interpretación de los mismos y la toma de decisiones.
 
 ---
 
-# 👩‍💻 Autora
+# 👩‍💻 Autora:
 
 **Vanina Cavallin**
 
-Doctora en Ciencias Biológicas
-
 Data Scientist | Data Analyst
 
-📧 **Email:** vaninacavallin@gmail.com
+📧 **E-mail:** vaninacavallin@gmail.com
 
 💼 **LinkedIn:** https://linkedin.com/in/vanina-cavallin
 
