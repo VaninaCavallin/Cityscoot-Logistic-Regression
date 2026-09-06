@@ -2,9 +2,9 @@
   <img src="images/Cityscoot.png" width="100%">
 </p>
 
-# 🛴 CityScoot – Demand Classification with Logistic Regression
+# 🛴 CityScoot – Demand classification with logistic regression / CityScoot - Clasificación de la demanda  mediante regresión logística
 
-> Pipeline de Machine Learning para clasificar la demanda diaria de scooters y demostrar cómo la correcta elección del modelo depende del objetivo de negocio.
+> **Pipeline de Machine Learning para clasificar la demanda diaria de scooters y demostrar cómo la correcta elección del modelo de análisis depende del objetivo de negocio**.
 
 ---
 
@@ -19,7 +19,7 @@
 
 ---
 
-# 🛠️ Tecnologías
+# 🛠️ Tecnologías utilizadas
 
 <p>
 
@@ -41,19 +41,19 @@
 
 ---
 
-# 📌 Descripción
+# 📌 Descripción del proyecto
 
-CityScoot es una empresa de micromovilidad urbana que busca anticipar la demanda diaria de scooters para optimizar la asignación de flota, la estrategia de precios y la planificación operativa.
+CityScoot es una empresa de micromovilidad urbana que busca *anticipar la demanda diaria de scooters para optimizar la asignación de flota, la estrategia de precios y la planificación operativa.*
 
-Inicialmente el problema fue planteado como una tarea de **regresión**, cuyo objetivo era estimar el número exacto de viajes diarios. Sin embargo, al redefinir el objetivo de negocio, el enfoque evolucionó hacia un problema de **clasificación binaria**, donde el interés pasó a ser identificar si un día presentará **alta** o **baja demanda**.
+Inicialmente el problema fue planteado como una tarea de **regresión**, cuyo objetivo era estimar el número exacto de viajes diarios. Sin embargo, al redefinir el *objetivo de negocio*, el enfoque evolucionó hacia un problema de **clasificación binaria**, donde el interés pasó a ser *identificar si un día presentará **alta** o **baja demanda***.
 
-Este proyecto demuestra cómo la selección del algoritmo debe responder al problema de negocio y no únicamente a la naturaleza de los datos.
+Este proyecto demuestra cómo la selección del modelo debe responder al problema de negocio y no únicamente a la naturaleza de los datos.
 
 ---
 
-# 🎯 Objetivo
+# 🎯 Objetivo del proyecto
 
-Clasificar cada día como 🔴 Alta demanda (con más de 1200 viajes) o 🔵 Baja demanda (con igual o menos de 1200 viajes) para anticipar decisiones relacionadas con la distribución de scooters y la planificación comercial.
+Clasificar cada día como 🔴 alta demanda (con más de 1200 viajes) o 🔵 baja demanda (con igual o menos de 1200 viajes) para anticipar decisiones relacionadas con la distribución de scooters y la planificación comercial.
 
 ---
 
@@ -68,7 +68,7 @@ Clasificar cada día como 🔴 Alta demanda (con más de 1200 viajes) o 🔵 Baj
 
 ---
 
-# 📊 Dataset
+# 📊 Dataset del proyecto
 
 Variables predictoras:
 
@@ -84,7 +84,7 @@ Variable objetivo: **high_demand**
 
 ---
 
-# ⚙️ Pipeline
+# ⚙️ Pipeline del proyecto
 
 - Análisis exploratorio (EDA)
 - Limpieza y preparación de datos
@@ -97,13 +97,13 @@ Variable objetivo: **high_demand**
 
 ---
 
-# 🤖 Modelo implementado: **Logistic Regression**
+# 🤖 Modelo implementado: **Regresión logística**
 
-La Regresión Logística fue seleccionada por su capacidad para modelar probabilidades en problemas de clasificación binaria y por permitir una interpretación directa mediante Odds Ratio.
+La **regresión logística** fue seleccionada por su **capacidad para modelar probabilidades en problemas de clasificación binaria y permitir una interpretación directa mediante Odds Ratio**.
 
 ---
 
-# 📈 Las métricas evaluadas son:
+# 📈 Las *métricas* evaluadas en este proyecto son:
 
 1. Accuracy
 2. Precision
@@ -116,11 +116,11 @@ La Regresión Logística fue seleccionada por su capacidad para modelar probabil
 
 # 💡 Resultados obtenidos
 
-El modelo obtuvo una adecuada capacidad discriminatoria para diferenciar días de alta y baja demanda. Además de la predicción, permitió interpretar el efecto de variables como inversión en marketing, lluvia, eventos urbanos y fin de semana sobre la probabilidad de registrar jornadas de *alta demanda*.
+El modelo obtuvo una adecuada capacidad discriminatoria para diferenciar días de 🔴 alta y 🔵 baja demanda. Además de la predicción, permitió interpretar el efecto de variables como inversión en marketing, lluvia, eventos urbanos y fin de semana sobre la probabilidad de registrar jornadas de *alta demanda*.
 
 ---
 
-# 📊 Visualizaciones
+# 📊 Visualizaciones implementadas
 
 ## Curva ROC
 
