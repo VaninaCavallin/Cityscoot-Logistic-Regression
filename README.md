@@ -137,6 +137,7 @@ La curva ROC resume la capacidad discriminatoria del modelo para diferenciar dí
 ## Matriz de confusión
 
  [19  4]
+ 
  [ 2 67]
 
 Permite evaluar el equilibrio entre falsos positivos y falsos negativos según el objetivo de negocio.
