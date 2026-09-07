@@ -124,7 +124,11 @@ El modelo obtuvo una adecuada capacidad discriminatoria para diferenciar días d
 
 ## Curva ROC
 
-<img src="images/roc_curve.png">
+<p align="center">
+
+  <img src="images/roc_curve.png">
+
+</p>
 
 La curva ROC resume la capacidad discriminatoria del modelo para diferenciar días de alta y baja demanda.
 
@@ -141,7 +145,12 @@ Permite evaluar el equilibrio entre falsos positivos y falsos negativos según e
 
 ## Importancia de variables
 
-<img src="images/importance_variables.png">
+<p align="center">
+
+  <img src="images/importance_variables.png">
+
+</p>
+
 
 Los Odds Ratios permiten interpretar el efecto de cada variable sobre la probabilidad de registrar alta demanda.
 
