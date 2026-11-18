@@ -2,214 +2,226 @@
   <img src="images/Cityscoot.png" width="100%">
 </p>
 
-# 🛴 CityScoot – Demand classification with logistic regression / CityScoot - Clasificación de la demanda  mediante regresión logística
+# 🛴 CityScoot – Clasificación de la demanda mediante regresión logística
 
-> **Pipeline de Machine Learning para clasificar la demanda diaria de scooters y demostrar cómo la correcta elección del modelo de análisis depende del objetivo de negocio**.
+> **Pipeline de Machine Learning para clasificar la demanda diaria de scooters y demostrar cómo la correcta elección del modelo depende del objetivo de negocio.**
 
----
+<br>
 
 <p align="center">
 
-📅 <strong>Dataset:</strong> Demanda diaria de scooters &nbsp;&nbsp;|&nbsp;&nbsp;
-🎯 <strong>Problema:</strong> Clasificación binaria &nbsp;&nbsp;|&nbsp;&nbsp;
-📈 <strong>Modelo:</strong> Logistic Regression &nbsp;&nbsp;|&nbsp;&nbsp;
-🛴 <strong>Caso de uso:</strong> Micromovilidad urbana
+📅 **Dataset:** 365 días &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+🎯 **Problema:** Clasificación binaria &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+📈 **Modelo:** Logistic Regression &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+📊 **ROC-AUC:** 0.97 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+🛴 **Caso de uso:** Micromovilidad urbana
 
 </p>
-
----
-
-# 🛠️ Tecnologías utilizadas
 
 <p>
 
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
-
 <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white">
-
 <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white">
-
 <img src="https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white">
-
 <img src="https://img.shields.io/badge/Matplotlib-11557c?style=for-the-badge">
-
-<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white">
-
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white">
 
 </p>
 
 ---
 
-# 📌 Descripción del proyecto
+# 📑 Tabla de contenidos
 
-CityScoot es una empresa de micromovilidad urbana que busca *anticipar la demanda diaria de scooters para optimizar la asignación de flota, la estrategia de precios y la planificación operativa.*
-
-Inicialmente el problema fue planteado como una tarea de **regresión**, cuyo objetivo era estimar el número exacto de viajes diarios. Sin embargo, al redefinir el *objetivo de negocio*, el enfoque evolucionó hacia un problema de **clasificación binaria**, donde el interés pasó a ser *identificar si un día presentará **alta** o **baja demanda***.
-
-Este proyecto demuestra cómo la selección del modelo debe responder al problema de negocio y no únicamente a la naturaleza de los datos.
-
----
-
-# 🎯 Objetivo del proyecto
-
-Clasificar cada día como 🔴 alta demanda (con más de 1200 viajes) o 🔵 baja demanda (con igual o menos de 1200 viajes) para anticipar decisiones relacionadas con la distribución de scooters y la planificación comercial.
-
----
-
-# 📂 Estructura del repositorio
-
-| Archivo | Descripción |
-|----------|-------------|
-| CityScoot_LogisticRegression.ipynb | Pipeline completo de limpieza, modelado y evaluación mediante Regresión Logística |
-| Dataset | Datos utilizados para el entrenamiento y evaluación |
-| Images | Banner y visualizaciones |
-| README.md | Documentación del proyecto |
+- [Caso de negocio](#-caso-de-negocio)
+- [Objetivo](#-objetivo)
+- [Dataset](#-dataset)
+- [Estructura del repositorio](#-estructura-del-repositorio)
+- [Cómo ejecutar](#-cómo-ejecutar)
+- [Metodología](#-metodología)
+- [Resultados](#-resultados)
+- [Visualizaciones](#-visualizaciones)
+- [Impacto en el negocio](#-impacto-en-el-negocio)
+- [Competencias demostradas](#-competencias-demostradas)
+- [Autora](#-autora)
 
 ---
 
-# 📊 Dataset del proyecto
+# 💼 Caso de negocio
 
-Variables predictoras:
+CityScoot es una empresa de micromovilidad urbana que busca **anticipar la demanda diaria de scooters** para optimizar la asignación de flota, la estrategia de precios y la planificación operativa.
 
-- Temperatura
-- Precipitaciones
-- Inversión en marketing
-- Precio por minuto
-- Fin de semana
-- Feriado
-- Eventos urbanos
+Inicialmente el problema fue planteado como una tarea de **regresión**, cuyo objetivo era estimar el número exacto de viajes diarios. Sin embargo, al redefinir el objetivo de negocio, el enfoque evolucionó hacia un problema de **clasificación binaria**: identificar si un día presentará **alta** o **baja demanda**.
 
-Variable objetivo: **high_demand**
+Este proyecto demuestra que la selección del modelo debe responder al problema de negocio y no únicamente a la naturaleza de los datos.
 
 ---
 
-# ⚙️ Pipeline del proyecto
+# 🎯 Objetivo
 
-- Análisis exploratorio (EDA)
-- Limpieza y preparación de datos
-- Ingeniería de variables
-- División en Train/Test
-- Escalado (StandardScaler)
-- Entrenamiento del modelo
-- Evaluación
-- Interpretación del modelo
+Clasificar cada día como 🔴 **alta demanda** (más de 1200 viajes) o 🔵 **baja demanda** (1200 viajes o menos) para anticipar decisiones de distribución de scooters y planificación comercial.
 
 ---
 
-# 🤖 Modelo implementado: **Regresión logística**
+# 📂 Dataset
 
-La **regresión logística** fue seleccionada por su **capacidad para modelar probabilidades en problemas de clasificación binaria y permitir una interpretación directa mediante Odds Ratio**.
+`Data/cityscoot_dataset.csv`: 365 registros diarios (un año de operación).
 
----
+| Variable | Descripción |
+|---|---|
+| `temp_c` | Temperatura (°C) |
+| `rain_mm` | Precipitaciones (mm) |
+| `marketing_spend` | Inversión en marketing |
+| `price_per_min` | Precio por minuto |
+| `is_weekend` | Fin de semana (0/1) |
+| `is_holiday` | Feriado (0/1) |
+| `city_event` | Evento urbano (0/1) |
+| `demand` | Cantidad de viajes del día |
+| **`high_demand`** | **Variable objetivo:** 1 si `demand` > 1200 |
 
-# 📈 Las *métricas* evaluadas en este proyecto son:
-
-1. Accuracy
-2. Precision
-3. Recall
-4. ROC-AUC
-5. Log-Loss
-6. Matriz de confusión
-
----
-
-# 💡 Resultados obtenidos
-
-El modelo obtuvo una adecuada capacidad discriminatoria para diferenciar días de 🔴 alta y 🔵 baja demanda. Además de la predicción, permitió interpretar el efecto de variables como inversión en marketing, lluvia, eventos urbanos y fin de semana sobre la probabilidad de registrar jornadas de *alta demanda*.
+El 75% de los días son de alta demanda, por lo que las clases están desbalanceadas.
 
 ---
 
-# 📊 Visualizaciones implementadas
+# 🗂 Estructura del repositorio
 
-## Curva ROC
-
-<p align="center">
-
-  <img src="images/roc_curve.png">
-
-</p>
-
-La curva ROC resume la capacidad discriminatoria del modelo para diferenciar días de alta y baja demanda.
-
----
-
-## Matriz de confusión
-
- [19  ;  4]
- 
- [ 2  ; 67]
-
-Permite evaluar el equilibrio entre falsos positivos y falsos negativos según el objetivo de negocio.
+```
+Cityscoot-logistic-regression/
+├── Data/
+│   └── cityscoot_dataset.csv                   # Dataset
+├── Notebooks/
+│   └── CityScoot_LogisticRegression.ipynb      # Pipeline completo
+├── images/                                     # Banner y visualizaciones
+├── requirements.txt
+└── README.md
+```
 
 ---
 
-## Importancia de variables
+# 🧪 Cómo ejecutar
 
-<p align="center">
+```bash
+git clone https://github.com/VaninaCavallin/Cityscoot-logistic-regression.git
+cd Cityscoot-logistic-regression
+pip install -r requirements.txt
+jupyter notebook
+```
 
-  <img src="images/importance_variables.png">
-
-</p>
-
-
-Los Odds Ratios permiten interpretar el efecto de cada variable sobre la probabilidad de registrar alta demanda.
-
----
-
-# 💼 Impacto del modelo elegido sobre el negocio
-
-El modelo de regresión logística permite *anticipar picos de demanda*, *optimizar la clasificación de scooters*, *planificar estratégicamente las campañas de marketing*, *ajustar precios* y *mejorar la planificación operativa*.
+Abrir `Notebooks/CityScoot_LogisticRegression.ipynb`. El notebook lee el dataset desde `../Data/cityscoot_dataset.csv`.
 
 ---
 
-# 📌 Competencias demostradas en el desarrollo de este proyecto
-
-Implementacion de:
-- Machine Learning,
-- Clasificación binaria,
-- Regresión logística,
-- Interpretación de Odds Ratio,
-- Ingeniería de características,
-- Evaluación de modelos,
-- Anañlítica de negocios,
-- Storytelling con datos.
-
----
-
-# 🔄 Flujo de trabajo en el proyecto
+# 🔄 Metodología
 
 ```mermaid
 flowchart LR
-
-A[Dataset] --> B[EDA]
-
-B --> C[Preprocesamiento]
-
-C --> D[Feature Engineering]
-
-D --> E[Train/Test Split]
-
-E --> F[Logistic Regression]
-
-F --> G[Evaluación]
-
-G --> H[Interpretación]
-
-H --> I[Business Insights]
+A[(Dataset)] --> B[EDA]
+B --> C[Selección de variables]
+C --> D[Train/Test Split estratificado]
+D --> E[Escalado]
+E --> F[Regresión Lineal]
+E --> G[Regresión Logística]
+F --> H[Comparación]
+G --> H
+H --> I[Interpretación con Odds Ratio]
+I --> J[Business Insights]
 ```
+
+1. **Preparación:** selección de las 7 variables predictoras, división train/test (75/25, estratificada) y escalado con `StandardScaler`.
+2. **Regresión lineal sobre un objetivo binario:** se entrenó primero para mostrar por qué no es el modelo adecuado: sus predicciones no son probabilidades y pueden caer fuera del rango [0, 1].
+3. **Regresión logística:** modela directamente la probabilidad de alta demanda.
+4. **Evaluación:** Accuracy, Precision, Recall, ROC-AUC, Log-Loss y matriz de confusión.
+5. **Interpretación:** coeficientes y Odds Ratios para entender el efecto de cada variable.
+
+---
+
+# 📈 Resultados
+
+Conjunto de prueba (25% de los datos, 92 días):
+
+| Métrica | Regresión Logística |
+|---|---:|
+| Accuracy | 0.935 |
+| Precision | 0.944 |
+| Recall | 0.971 |
+| ROC-AUC | 0.972 |
+| Log-Loss | 0.213 |
+
+- Como el 75% de los días son de alta demanda, un modelo que predijera siempre "alta" acertaría el 75%. El modelo supera ampliamente esa referencia, y el **ROC-AUC de 0.97** confirma una muy buena capacidad para separar ambas clases.
+- La regresión lineal con umbral 0.5 logra una accuracy similar (0.924), pero sus salidas **no son probabilidades** y no permite interpretar el efecto de las variables en términos de chances. Por eso la regresión logística es el modelo correcto para este problema.
+
+### Interpretación de las variables (Odds Ratios)
+
+Variables escaladas: el Odds Ratio indica cuánto se multiplican las chances de alta demanda al aumentar la variable en un desvío estándar.
+
+| Variable | Odds Ratio | Efecto |
+|---|---:|---|
+| Inversión en marketing | 7.86 | ⬆️ Aumenta la demanda |
+| Temperatura | 4.05 | ⬆️ Aumenta la demanda |
+| Evento urbano | 3.12 | ⬆️ Aumenta la demanda |
+| Fin de semana | 2.26 | ⬆️ Aumenta la demanda |
+| Feriado | 2.22 | ⬆️ Aumenta la demanda |
+| Precio por minuto | 0.75 | ⬇️ Reduce la demanda |
+| Lluvia | 0.65 | ⬇️ Reduce la demanda |
+
+---
+
+# 📊 Visualizaciones
+
+## 📈 Curva ROC
+
+<p align="center">
+  <img src="images/roc_curve.png" width="600">
+</p>
+
+La curva ROC resume la capacidad discriminatoria del modelo para diferenciar días de alta y baja demanda (ROC-AUC = 0.97).
+
+## 🔍 Matriz de confusión
+
+| | Predicho: baja | Predicho: alta |
+|---|---:|---:|
+| **Real: baja** | 19 ✅ | 4 |
+| **Real: alta** | 2 | 67 ✅ |
+
+El modelo clasificó correctamente 86 de 92 días. Solo 2 días de alta demanda no fueron detectados, lo que minimiza el riesgo de quedarse sin scooters disponibles.
+
+## 🎯 Importancia de variables
+
+<p align="center">
+  <img src="images/importance_variables.png" width="700">
+</p>
+
+---
+
+# 💼 Impacto en el negocio
+
+El modelo permite:
+
+- **Anticipar picos de demanda** y redistribuir la flota con anticipación.
+- **Planificar campañas de marketing**, la palanca con mayor efecto sobre la demanda.
+- **Ajustar precios** según el día, el clima y los eventos de la ciudad.
+- **Mejorar la planificación operativa** en días de lluvia o baja temperatura.
+
+---
+
+# 📌 Competencias demostradas
+
+- Machine Learning aplicado a un problema de negocio
+- Clasificación binaria con regresión logística
+- Comparación entre regresión lineal y logística
+- Interpretación de coeficientes y Odds Ratios
+- Evaluación de modelos con métricas de clasificación
+- Analítica de negocios y storytelling con datos
 
 ---
 
 # ⭐ Aprendizajes
 
-Más allá del desempeño predictivo, el principal aporte del proyecto fue demostrar que **la selección del modelo debe responder al objetivo de negocio**.
-
-El trabajo evidencia la implementación de la estadística en el análisis de los datos y la aplicación de criterio para la interpretación de los mismos y la toma de decisiones.
+Más allá del desempeño predictivo, el principal aporte del proyecto fue demostrar que **la selección del modelo debe responder al objetivo de negocio**, aplicando criterio estadístico para interpretar los resultados y apoyar la toma de decisiones.
 
 ---
 
-# 👩‍💻 Autora:
+# 👩‍💻 Autora
 
 **Vanina Cavallin**
 

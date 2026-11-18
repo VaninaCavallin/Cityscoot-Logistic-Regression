@@ -1,0 +1,10 @@
+# Análisis y visualización
+pandas
+numpy
+matplotlib
+
+# Machine Learning
+scikit-learn
+
+# Entorno de notebooks
+jupyter
